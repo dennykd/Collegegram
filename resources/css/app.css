@@ -1,0 +1,47 @@
+@tailwind base;
+@layer base {
+    trix-toolbar {
+        display: none;
+    }
+}
+@tailwind components;
+@layer components {
+    .input-primary {
+        @apply p-2 rounded-xl focus:outline-none focus:ring-purpink focus:ring-2 invalid:text-pink-500 text-secondary ring-slate-800 md:ring-primary ring-2 md:placeholder:text-sm md:p-1;
+    }
+    .btn-primary {
+        @apply py-2 px-4 bg-purpink rounded-2xl my-4 hover:brightness-75 hover:scale-95 transition-all;
+    }
+    .btn-primary__text {
+        @apply group-hover:text-pink-900 transition-all;
+    }
+    .btn-secondary {
+        @apply bg-secondary-2 text-secondary-grey font-semibold px-2 py-1 mx-2 rounded-full transition-all hover:bg-secondary-grey hover:text-secondary-2 hover:scale-90;
+    }
+    .btn-secondary__active {
+        @apply bg-secondary-grey text-secondary-2 hover:bg-secondary-2 hover:text-secondary-grey;
+    }
+    .hamburger-line {
+        @apply w-[30px] h-[2px] my-2 mr-3 block bg-purpink;
+    }
+    .hamburger-active > span:nth-child(1) {
+        @apply rotate-[41.5deg];
+    }
+    .hamburger-active > span:nth-child(2) {
+        @apply scale-0;
+    }
+    .hamburger-active > span:nth-child(3) {
+        @apply -rotate-[41.5deg];
+    }
+}
+@tailwind utilities;
+@layer utilities {
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+
+    .no-scrollbar {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+    }
+}

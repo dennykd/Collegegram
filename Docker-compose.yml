@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+# php server
+    php:
+        build:
+            context: .
+            target: php
+            args:
+                - APP_ENV=${APP_ENV}
+        environment:
+            - APP_ENV=${APP_ENV}
+            - CONTAINER_ROLE=app
+        working_dir: /var/wwww
+        volumes:
+            - ./:/var/wwww
+        ports:
+            - 8000:8000
+
